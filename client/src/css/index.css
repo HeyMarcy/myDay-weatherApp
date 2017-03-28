@@ -122,31 +122,31 @@ margin-top:-50px;
   line-height: 1.65;
   font-family: acumin-pro, sans-serif;
   font-style: normal;
-  font-weight: 300;
-  font-size: .9em
+  font-weight: 200;
+  font-size: 1em
 }
-.widget p{ margin:0;
+.widget p{
+  margin:0;
   font-family: acumin-pro, sans-serif;
+
  }
 
 
 
-.current-temp {
-  text-shadow: 0 0 5px rgba(0,0,0,0.23);
+.widget h6 {
+text-shadow: 0 0 5px rgba(0,0,0,0.23);
 font-family: acumin-pro, sans-serif;
 font-style: normal;
 font-weight: 200;
 margin:3px auto 0px auto;
 }
-
-
-
-.widget-wind span.temp {
-  font-family: acumin-pro, sans-serif;
-  text-shadow: 0 0 5px rgba(0,0,0,0.23);
-  line-height: 1.65;
-  font-size: 1.8em
+.widget h6 small {
+  font-weight: 300;
+  font-size: .65em
 }
+
+
+
 
 .curent-date, .location-section {
   font-family: acumin-pro, sans-serif;

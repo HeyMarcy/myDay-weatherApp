@@ -4,28 +4,7 @@ import Clock from './components/clock';
 import './css/sky.css';
 import './css/index.css';
 
-const INITIAL_STATE = {
-  hour: "23",
-  minutes:"32",
-  day:"21",
-  month: "March",
-  dayOfMonth: "Monday",
-  weather: "Overcast",
-  temp_f: "42",
-  low: "38",
-  high: "50",
-  sunriseHour: 6,
-  sunriseMinutes: 52,
-  timeToSunset: "",
-  sunset: 7,
-  wind_dir: "NE",
-  wind_degrees: 35,
-  wind_mph: 3.7,
-  wind_gust_mph: 9.3,
-  wind_degrees:"6.2",
-  city: "Chicago",
-  stateName: "IL",
-}
+
 
 
 class App extends Component {
@@ -35,7 +14,7 @@ class App extends Component {
         <div className="bg sky-gradient-19">
           <div className="container">
           <form className="currentLocation" onSubmit={this.handleSubmit}>
-            <button className="change-loc">Chicago, IL </button>
+            <button className="change-loc">{ this.props.city }, { this.props.stateName }</button>
           </form>
             <form className="locationForm" onSubmit={this.handleSubmit} >
               <input type="text" className="city" placeholder="City"/>
@@ -45,17 +24,17 @@ class App extends Component {
             </form>
 
             <div className="timeDate">
-              <div className="date">Wedneday, August 9</div>
+              <div className="date">{ this.props.day },&nbsp; { this.props.month }&nbsp; { this.props.dayOfMonth }</div>
               <Clock />
             </div>
             <div className="conditions">
               <div className="widget">
-                <h6 className="current-temp">45</h6>
-                <p>32 <span className="light"> &nbsp;|&nbsp; </span> 48</p>
+                <h6>{ this.props.temp }</h6>
+                <p>{ this.props.low }<span className="light"> &nbsp;|&nbsp; </span> { this.props.high }</p>
               </div>
               <div className="widget widget-wind">
-                <div><span className="temp">6.2</span> <small>mph</small></div>
-                <div className="wind-dir"> NNE </div>
+                <h6>{ this.props.windSpeed } <small>mph</small></h6>
+                <p className="wind-dir"> { this.props.windDir } </p>
               </div>
             </div>
           </div>
@@ -65,4 +44,17 @@ class App extends Component {
   }
 }
 
+
+App.defaultProps = {
+  city: "Chicago",
+  stateName: "IL",
+  day: "Wednesday",
+  month: "August",
+  dayOfMonth: "9",
+  temp: "45",
+  high: "48",
+  low: "32",
+  windSpeed: "6.2",
+  windDir: "NNE",
+}
 export default App;
