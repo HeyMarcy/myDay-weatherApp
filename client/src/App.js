@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import CurrentLoc from './components/CurrentLoc';
-import LocationForm from './components/LocationForm';
+import LocationContainer from './components/LocationContainer';
 import Date from './components/Date';
 import Clock from './components/clock';
 import WidgetWind from './components/WidgetWind';
@@ -15,8 +15,8 @@ function App (props) {
       <div className="App">
         <div className="bg sky-gradient-19">
           <div className="container">
-            <CurrentLoc city={ props.city } stateName={ props.stateName }  />
-            <LocationForm />
+
+            <LocationContainer />
             <Date day={props.day}/>
             <Clock />
             <div className="conditions">
