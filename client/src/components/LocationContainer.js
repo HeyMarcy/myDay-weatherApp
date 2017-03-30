@@ -5,11 +5,10 @@ import LocationForm from './LocationForm';
 
 export default class LocationContainer extends Component {
 
-var displayLoc = true;
 
   render() {
     return (
-      <CurrentLoc city={ this.props.city } stateName={ this.props.stateName }  />
+      <CurrentLoc city={ this.props.city } stateName={ this.props.stateName } changeLoc = {this.props.changeLoc}  />
     )
   }
 }

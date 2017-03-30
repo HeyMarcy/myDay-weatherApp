@@ -1,7 +1,7 @@
-import { CURRENT_TIME, FETCH_WEATHER_SUCCESS, INPUT_LOC } from '../actions/index';
+import { CURRENT_TIME, FETCH_WEATHER_SUCCESS, CHANGE_LOC } from '../actions/index';
 
 const initialState = {
-  inputLoc:false,
+  changeLoc:false,
   hour: "",
   minutes:"",
   day:"",
@@ -19,8 +19,9 @@ const initialState = {
 
 export const weatherReducer = (state=initialState, action) => {
   switch(action.type){
-    case INPUT_LOC:
-    return {...state, inputLoc: !state.inputLoc};
+    case CHANGE_LOC:
+    console.log(state.changeLoc)
+    return {...state, changeLoc: !state.changeLoc};
     case CURRENT_TIME:
       return {...state, date:action.date, hour:action.hour, minutes:action.minutes};
 

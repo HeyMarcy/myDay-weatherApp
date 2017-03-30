@@ -2,9 +2,9 @@
 import { connect } from 'react-redux';
 
 
-export const INPUT_LOC = 'INPUT_LOC';
-export const inputLoc = () => ({
-  type: INPUT_LOC
+export const CHANGE_LOC = 'INPUT_LOC';
+export const changeLoc = () => ({
+  type: CHANGE_LOC
 });
 
 export const CURRENT_TIME = 'CURRENT_TIME';

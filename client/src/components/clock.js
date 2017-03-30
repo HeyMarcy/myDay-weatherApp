@@ -3,7 +3,6 @@ import * as actions from '../actions';
 import {connect} from 'react-redux';
 
 import '../css/index.css';
-// import '../utility.js';
 
 class Clock extends React.Component {
     componentDidMount() {
@@ -18,6 +17,8 @@ class Clock extends React.Component {
         this.props.dispatch(actions.currentTime(date.getHours(), date.getMinutes()));
     }
     render() {
+      //to format time to 12hr day. Need to remove from render and `.bind(this)`.
+
       const formatHours= (hrs) => {
         let h = hrs;
         h >= 12 ? h = hrs-12 : h;

@@ -19,7 +19,7 @@ class App  extends Component {
       <div className="App">
         <div className={`bg sky-gradient-${this.props.hour}`}>
           <div className="container">
-            <CurrentLoc city={ this.props.city } stateName={ this.props.stateName }  />
+            <CurrentLoc city={ this.props.city } stateName={ this.props.stateName } />
             <Date day={this.props.day} month={this.props.month} dayOfMonth={this.props.dayOfMonth}/>
             <Clock />
             <div className="conditions">
@@ -33,7 +33,16 @@ class App  extends Component {
   }
 }
 
+// F : focused
+// I: independent
+// R: reusable
+// S: small
+// T: testable
+//
+
+
 const mapStateToProps = (state, props) => ({
+    changeLoc: state.changeLoc,
     day: state.day,
     month: state.month,
     hour: state.hour,

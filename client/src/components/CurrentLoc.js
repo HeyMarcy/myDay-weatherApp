@@ -5,7 +5,7 @@ export default class CurrentLoc extends Component {
   render(){
     return (
       <form className="currentLocation" >
-        <button className="change-loc">{ this.props.city }, { this.props.stateName }</button>
+        <button className="change-loc" >{ this.props.city }, { this.props.stateName }</button>
       </form>
     );
 
