@@ -1,46 +1,52 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import CurrentLoc from './components/CurrentLoc';
-import LocationContainer from './components/LocationContainer';
 import Date from './components/Date';
 import Clock from './components/clock';
 import WidgetWind from './components/WidgetWind';
 import WidgetTemp from './components/WidgetTemp';
+import * as actions from './actions'
 import './css/sky.css';
 import './css/index.css';
 
 
-function App (props) {
+class App  extends Component {
+  componentDidMount() {
+    this.props.dispatch(actions.fetchWeather());
+  }
+  render() {
     return (
       <div className="App">
-        <div className="bg sky-gradient-19">
+        <div className={`bg sky-gradient-${this.props.hour}`}>
           <div className="container">
-
-            <LocationContainer />
-            <Date day={props.day}/>
+            <CurrentLoc city={ this.props.city } stateName={ this.props.stateName }  />
+            <Date day={this.props.day} month={this.props.month} dayOfMonth={this.props.dayOfMonth}/>
             <Clock />
             <div className="conditions">
-              <WidgetTemp temp={props.temp} low={ props.low } high={ props.high }/>
-              <WidgetWind windSpeed={props.windSpeed} windDir={ props.windDir } />
+              <WidgetTemp temp={this.props.temp} low={ this.props.low } high={ this.props.high }/>
+              <WidgetWind windSpeed={this.props.windSpeed} windDir={ this.props.windDir } />
             </div>
           </div>
         </div>
       </div>
     );
   }
-
-
-
-App.defaultProps = {
-  city: "Chicago",
-  stateName: "IL",
-  day: "Thursday",
-  month: "August",
-  dayOfMonth: "10",
-  temp: "45",
-  high: "48",
-  low: "32",
-  windSpeed: "6.2",
-  windDir: "NNE",
 }
-export default App;
+
+const mapStateToProps = (state, props) => ({
+    day: state.day,
+    month: state.month,
+    hour: state.hour,
+    minutes: state.minutes,
+    dayOfMonth: state.dayOfMonth,
+    city: state.city,
+    stateName: state.stateName,
+    temp:state.temp,
+    low:state.low,
+    high: state.high,
+    windSpeed: state.windSpeed,
+    windDir: state.windDir,
+
+});
+
+export default connect(mapStateToProps)(App);

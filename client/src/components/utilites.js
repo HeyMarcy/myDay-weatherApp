@@ -1,11 +1,7 @@
 const formatHours= (hrs) => {
   let h = hrs;
-  if (h >= 12){
-    h = hrs-12;
-  };
-  if (h === 0){
-    h = 12
-  };
+  h >= 12 ? h = hrs-12 : h;
+  h === 0 ? h = 12 : h;
   return h;
 };
 

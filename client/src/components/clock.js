@@ -1,32 +1,46 @@
 import React, {Component} from 'react';
+import * as actions from '../actions';
 import {connect} from 'react-redux';
 
 import '../css/index.css';
+// import '../utility.js';
 
 class Clock extends React.Component {
-  render() {
-    const formatHours= (hrs) => {
-      let h = hrs;
-      h >= 12 ? h = hrs-12 : h;
-      h === 0 ? h = 12 : h;
-      return h;
-    };
+    componentDidMount() {
+        this.timerID = setInterval(() => this.tick(), 1000*10);
+    }
+    componentWillUnmount() {
+        clearInterval(this.timerID);
+    }
 
-    const formatMins = (mins) => {
-      return mins < 10 ? mins = "0"+mins : mins
-    };
-    let date = new Date();
-    let minPretty = formatMins(date.getMinutes());
-    let hoursPretty = formatHours(date.getHours());
+    tick() {
+        let date = new Date();
+        this.props.dispatch(actions.currentTime(date.getHours(), date.getMinutes()));
+    }
+    render() {
+      const formatHours= (hrs) => {
+        let h = hrs;
+        h >= 12 ? h = hrs-12 : h;
+        h === 0 ? h = 12 : h;
+        return h;
+      };
 
-    return (
-      <div>
-          <span>
-              <h1>{hoursPretty}:{minPretty}</h1>
-          </span>
-      </div>
-    );
-  }
+      const formatMins = (mins) => {
+         return mins < 10 ? mins = "0"+mins : mins
+      };
+
+      let minPretty = formatMins(this.props.minutes);
+      let hoursPretty = formatHours(this.props.hour);
+        return (
+            <div>
+                <span>
+                    <h1>{hoursPretty}:{minPretty}</h1>
+                </span>
+            </div>
+        );
+    }
 }
 
-export default Clock;
+const mapStateToProps = (state, props) => ({hour: state.hour, minutes: state.minutes});
+
+export default connect(mapStateToProps)(Clock);
