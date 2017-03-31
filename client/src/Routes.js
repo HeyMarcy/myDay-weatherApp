@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import { Router, Route } from 'react-router';
+import { Router, Route } from 'react-router';
 import CurrentLoc from './components/CurrentLoc';
-import LocationForm from './components/LocationForm';
 import Date from './components/Date';
 import Clock from './components/clock';
 import WidgetWind from './components/WidgetWind';
@@ -16,19 +15,17 @@ class App  extends Component {
   componentDidMount() {
     this.props.dispatch(actions.fetchWeather());
   }
-
-
   render() {
     return (
       <div className="App">
-        <div className={`bg bg sky-gradient-${this.props.hour}`}>
+        <div className={`bg sky-gradient-${this.props.hour}`}>
           <div className="container">
-          { this.props.showInput ? <LocationForm /> : <CurrentLoc /> }
-            <Date />
+            <CurrentLoc city={ this.props.city } stateName={ this.props.stateName } />
+            <Date day={this.props.day} month={this.props.month} dayOfMonth={this.props.dayOfMonth}/>
             <Clock />
             <div className="conditions">
-              <WidgetTemp />
-              <WidgetWind  />
+              <WidgetTemp temp={this.props.temp} low={ this.props.low } high={ this.props.high }/>
+              <WidgetWind windSpeed={this.props.windSpeed} windDir={ this.props.windDir } />
             </div>
           </div>
         </div>
@@ -46,7 +43,7 @@ class App  extends Component {
 
 
 const mapStateToProps = (state, props) => ({
-    showInput: state.showInput,
+    changeLoc: state.changeLoc,
     day: state.day,
     month: state.month,
     hour: state.hour,

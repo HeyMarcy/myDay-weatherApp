@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 
-export default class WidgetTemp extends Component {
+class WidgetTemp extends Component {
   render() {
     return (
       <div className="widget">
@@ -12,3 +12,11 @@ export default class WidgetTemp extends Component {
     )
   }
 }
+
+const mapStateToProps = (state, props) => ({
+    temp:state.temp,
+    low:state.low,
+    high: state.high,
+});
+
+export default connect(mapStateToProps)(WidgetTemp);

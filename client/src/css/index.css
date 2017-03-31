@@ -62,9 +62,9 @@ button, input {
 }
 
 input.stateName {
-  width: 40px;
+  width: 18px;
 }
-.locationForm { display:none }
+
 /*.currentLocation { display:none }*/
 
 
@@ -99,6 +99,7 @@ margin-top:-50px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   align-items: center;
+  background-color:#666;
 }
 .hours-left {
   font-size: 12px;
