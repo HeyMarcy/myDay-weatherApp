@@ -19,6 +19,7 @@ class App  extends Component {
 
 
   render() {
+    console.log(this.props)
     return (
       <div className="App">
         <div className={`bg bg sky-gradient-${this.props.hour}`}>

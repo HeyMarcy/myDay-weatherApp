@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 export const SHOW_INPUT = 'SHOW_INPUT';
 export const showInput = () => ({
-  type: SHOW_INPUT
+  type: SHOW_INPUT,
 });
 
 export const CURRENT_TIME = 'CURRENT_TIME';
