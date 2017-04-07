@@ -1,6 +1,13 @@
 
 import { connect } from 'react-redux';
 
+// export const PROCESS_INPUT = 'PROCESS_INPUT'
+// export const processUser = (city, stateName, e) => ({
+//   type: PROCESS_USER_INPUT,
+//   city,
+//   stateName,
+//   e
+// });
 
 export const SHOW_INPUT = 'SHOW_INPUT';
 export const showInput = () => ({
