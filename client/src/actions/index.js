@@ -1,14 +1,4 @@
 
-import { connect } from 'react-redux';
-
-// export const PROCESS_INPUT = 'PROCESS_INPUT'
-// export const processUser = (city, stateName, e) => ({
-//   type: PROCESS_USER_INPUT,
-//   city,
-//   stateName,
-//   e
-// });
-
 export const SHOW_INPUT = 'SHOW_INPUT';
 export const showInput = () => ({
   type: SHOW_INPUT,
@@ -49,18 +39,3 @@ export const fetchWeather = (city="miami", stateName="FL") => dispatch => {
     })
     .then(data => dispatch(fetchDataSuccess(data)))
 };
-
-
-// export const fetchSky = () => dispatch => {
-//     const url = `https://api.sunrise-sunset.org/json?lat=36.7201600&lng=-4.4203400&date=today`;
-//     return fetch(url).then(response => {
-//         if (!response.ok) {
-//             const error = new Error(response.statusText)
-//             error.response = response
-//             throw error;
-//         }
-//         return response.json();
-//         console.log(response.json);
-//     })
-//     .then(data => dispatch(fetchSkySuccess(data)))
-// };
