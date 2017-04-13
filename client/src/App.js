@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 // import { Router, Route } from 'react-router';
 import CurrentLoc from './components/CurrentLoc';
 import LocationForm from './components/LocationForm';
-import Date from './components/Date';
+import Date from './components/date';
 import Clock from './components/clock';
 import WidgetWind from './components/WidgetWind';
 import WidgetTemp from './components/WidgetTemp';
