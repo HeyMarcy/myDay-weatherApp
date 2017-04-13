@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "description": "A weather app displaying local temp, wind direction and speed, and indicates how much daylight is left in the day",
   "main": "index.js",
+  "engines": {
+  "node": "6.9.1"
+},
   "scripts": {
     "start": "node index.js",
     "heroku-postbuild": "cd client && npm install --only=dev && npm run build",
