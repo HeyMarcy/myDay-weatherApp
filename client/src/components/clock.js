@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import * as actions from '../actions';
 import {connect} from 'react-redux';
 
@@ -6,7 +6,7 @@ import '../css/index.css';
 
 class Clock extends React.Component {
     componentDidMount() {
-        this.timerID = setInterval(() => this.tick(), 1000*10);
+        this.timerID = setInterval(() => this.tick(), 1000);
     }
     componentWillUnmount() {
         clearInterval(this.timerID);

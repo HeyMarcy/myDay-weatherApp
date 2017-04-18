@@ -23,10 +23,6 @@ class CurrentLoc extends Component {
   }
 };
 
-// currentLocation.propTypes = {
-//   showInput: PropTypes.func.isRequired,
-// };
-
 const mapStateToProps = (state, props) => ({
     showInput: state.showInput,
     city: state.city,

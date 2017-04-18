@@ -35,7 +35,6 @@ export const fetchWeather = (city="miami", stateName="FL") => dispatch => {
             throw error;
         }
         return response.json();
-        console.log(response.json);
     })
     .then(data => dispatch(fetchDataSuccess(data)))
 };
