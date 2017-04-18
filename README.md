@@ -12,4 +12,4 @@ An app that reflects the amount of daylight outside.
 
 ## Deployment
 
-https://polar-stream-25433.herokuapp.com/.
+https://safe-cove-53122.herokuapp.com/.
