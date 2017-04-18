@@ -1,15 +1,15 @@
 {
-  "name": "thinkful-full-stack-template-server",
+  "name": "myDay-weatherApp",
   "version": "0.1.0",
-  "description": "Server portion of a full-stack starter template",
+  "description": "A weather app displaying local temp, wind direction and speed, and indicates how much daylight is left in the day",
   "main": "index.js",
   "engines": {
-    "node": "6.9.1"
+    "node": "6.10.2"
   },
   "scripts": {
     "start": "nodemon index.js"
   },
-  "author": "Joe Turner <jturner@thinkful.com>",
+  "author": "Marcy Montross <marcy.montross@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "express": "^4.14.1",
