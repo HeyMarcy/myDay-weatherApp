@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import CurrentLoc from './components/CurrentLoc';
 import LocationForm from './components/LocationForm';
 import Date from './components/Date';
-import Clock from './components/clock';
+import Clock from './components/Clock';
 import WidgetWind from './components/WidgetWind';
 import WidgetTemp from './components/WidgetTemp';
 import * as actions from './actions'
@@ -38,12 +38,6 @@ class App  extends Component {
   }
 }
 
-// F : focused
-// I: independent
-// R: reusable
-// S: small
-// T: testable
-//
 
 
 const mapStateToProps = (state, props) => ({

@@ -34,13 +34,6 @@ class App  extends Component {
   }
 }
 
-// F : focused
-// I: independent
-// R: reusable
-// S: small
-// T: testable
-//
-
 
 const mapStateToProps = (state, props) => ({
     changeLoc: state.changeLoc,
