@@ -17,7 +17,6 @@ class App  extends Component {
     this.props.dispatch(actions.fetchWeather());
   }
 
-
   render() {
     console.log(this.props)
     return (

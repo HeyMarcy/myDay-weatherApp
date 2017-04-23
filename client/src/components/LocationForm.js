@@ -13,7 +13,7 @@ class LocationForm extends Component {
          let city = this.city.value;
          let stateName = this.stateName.value;
          this.props.dispatch(actions.fetchWeather(city, stateName));
-         console.log(this.city);
+        //  console.log(this.city);
    }
 
 

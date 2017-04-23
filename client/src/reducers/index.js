@@ -25,7 +25,7 @@ export const weatherReducer = (state=initialState, action) => {
       return {...state, date:action.date, hour:action.hour, minutes:action.minutes};
 
     case FETCH_WEATHER_SUCCESS:
-      console.log(action.payload);
+      console.log("action.payload", action.payload);
       return {...state,
         showInput:false,
         city: action.payload.current_observation.display_location.city,
