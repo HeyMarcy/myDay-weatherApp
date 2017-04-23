@@ -12,4 +12,4 @@ An app that reflects the amount of daylight outside.
 
 ## Deployment
 
-https://safe-cove-53122.herokuapp.com/.
+(unable to deploy to heroku at this time)
