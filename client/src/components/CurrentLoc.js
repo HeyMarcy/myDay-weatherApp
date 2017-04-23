@@ -3,15 +3,15 @@ import { connect } from 'react-redux';
 import * as actions from '../actions'
 
 class CurrentLoc extends Component {
-  constructor(props) {
+    constructor(props) {
          super(props);
          this.hideButton = this.hideButton.bind(this);
-     }
+    }
 
-     hideButton(e) {
+    hideButton(e) {
       e.preventDefault();
-         this.props.dispatch(actions.showInput(e));
-       }
+      this.props.dispatch(actions.showInput(e));
+    }
 
   render(){
     return (
@@ -19,7 +19,6 @@ class CurrentLoc extends Component {
         <button className="change-loc"  onClick={this.hideButton}> { this.props.city }, { this.props.stateName }</button>
       </form>
     );
-
   }
 };
 
