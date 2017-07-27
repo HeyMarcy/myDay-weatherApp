@@ -34,7 +34,7 @@ export const weatherReducer = (state = initialState, action) => {
 			};
 
 		case FETCH_WEATHER_SUCCESS:
-			console.log(action.payload);
+			console.log('action.payload', action.payload);
 			return {
 				...state,
 				showInput: false,

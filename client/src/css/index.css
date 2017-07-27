@@ -1,12 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900');
 
-body, .app {
+body,
+.app {
 	margin: 0;
 	padding: 0;
 	font-family: "acumin-pro", "Lato", sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	font-family: "acumin-pro", "Lato", sans-serif;
 	font-weight: 300;
 	margin-top: 0;
@@ -71,7 +77,8 @@ form {
 	font-family: "acumin-pro", "Lato", sans-serif;
 	font-weight: 400;
 }
-button, input {
+button,
+input {
 	display: inline-block;
 	background-color: rgba(255, 255, 255, 0);
 	color: #fff;
@@ -87,31 +94,11 @@ button, input {
 }
 
 input.stateName {
-	width: 20px;
+	width: 21px;
 }
-::-webkit-input-placeholder {
-	/* WebKit, Blink, Edge */
-	color: #fff;
+input::placeholder {
+	color: white;
 }
-:-moz-placeholder {
-	/* Mozilla Firefox 4 to 18 */
-	color: #fff;
-	opacity: 1;
-}
-::-moz-placeholder {
-	/* Mozilla Firefox 19+ */
-	color: #fff;
-	opacity: 1;
-}
-:-ms-input-placeholder {
-	/* Internet Explorer 10-11 */
-	color: #fff;
-}
-::-ms-input-placeholder {
-	/* Microsoft Edge */
-	color: #fff;
-}
-
 /*.currentLocation { display:none }*/
 
 @media (max-width: 600px) {
@@ -186,7 +173,8 @@ input.stateName {
 	font-size: .65em;
 }
 
-.curent-date, .location-section {
+.curent-date,
+.location-section {
 	font-family: acumin-pro, sans-serif;
 	font-style: normal;
 	font-weight: 100;

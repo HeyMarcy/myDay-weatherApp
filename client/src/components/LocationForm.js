@@ -12,8 +12,8 @@ class LocationForm extends Component {
          e.preventDefault();
          let city = this.city.value;
          let stateName = this.stateName.value;
-         this.props.dispatch(actions.fetchWeather(city, stateName))
-         console.log(this.city);
+         this.props.dispatch(actions.fetchWeather(city, stateName));
+        //  console.log(this.city);
    }
 
 
@@ -32,6 +32,7 @@ class LocationForm extends Component {
 const mapStateToProps = (state, props) => ({
     city: state.city,
     stateName: state.stateName,
+    showInput: state.showInput,
 });
 
 export default connect(mapStateToProps)(LocationForm);

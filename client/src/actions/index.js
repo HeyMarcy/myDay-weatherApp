@@ -37,7 +37,6 @@ export const fetchWeather = (
 				throw error;
 			}
 			return response.json();
-			console.log(response.json);
 		})
 		.then(data => dispatch(fetchDataSuccess(data)));
 };
